@@ -1,4 +1,8 @@
-# OxideDock
+# GTLLM
+This is a new GTLLM app re-written utilising Tauri instead of the original Dioxus. 
+
+
+# GTLLM
 
 [![CI](https://github.com/fridzema/oxide-dock/actions/workflows/ci.yml/badge.svg)](https://github.com/fridzema/oxide-dock/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/github/license/fridzema/oxide-dock)](LICENSE)

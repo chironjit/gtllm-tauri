@@ -79,7 +79,7 @@ mod tests {
         let result = get_app_info(&state);
         assert!(result.is_ok());
         let info = result.unwrap();
-        assert_eq!(info.name, "OxideDock");
+        assert_eq!(info.name, "GTLLM");
         assert_eq!(info.visit_count, 1);
     }
 

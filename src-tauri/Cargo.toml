@@ -1,11 +1,11 @@
 [package]
-name = "oxidedock"
-version = "0.8.0" # x-release-please-version
-description = "OxideDock: a Rust + Vue desktop application foundation"
+name = "gtllm"
+version = "0.3.0" # x-release-please-version
+description = "GTLLM: a Rust + Vue desktop application"
 edition = "2021"
 
 [lib]
-name = "oxidedock_lib"
+name = "gtllm_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

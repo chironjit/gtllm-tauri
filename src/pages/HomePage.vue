@@ -23,7 +23,7 @@ const techStack = ['Tauri v2', 'Vue 3', 'TypeScript', 'Tailwind CSS v4', 'Pinia'
         </h1>
       </div>
       <p class="max-w-md text-lg text-gray-600 dark:text-gray-400">
-        Raw speed, refined desktop. OxideDock is powered by
+        Raw speed, refined desktop. GTLLM is powered by
         <span class="font-medium text-gray-900 dark:text-gray-200">Tauri</span>,
         <span class="font-medium text-gray-900 dark:text-gray-200">Vue</span>, and
         <span class="font-medium text-gray-900 dark:text-gray-200">TypeScript</span>.

@@ -41,7 +41,7 @@ const techStack = [
 <template>
   <div class="mx-auto flex max-w-xl flex-col items-center gap-8 py-8">
     <section class="flex flex-col items-center gap-3 text-center">
-      <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">About OxideDock</h1>
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">About GTLLM</h1>
       <p class="max-w-md text-gray-600 dark:text-gray-400">
         A desktop application foundation built with Tauri v2, Vue 3, and Vite. Use it as a starting
         point for cross-platform desktop apps with native performance.

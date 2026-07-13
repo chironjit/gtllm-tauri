@@ -8,7 +8,7 @@ pub struct AppState {
 impl Default for AppState {
     fn default() -> Self {
         Self {
-            app_name: "OxideDock".to_string(),
+            app_name: "GTLLM".to_string(),
             visit_count: Mutex::new(0),
         }
     }
@@ -21,7 +21,7 @@ mod tests {
     #[test]
     fn test_default_state() {
         let state = AppState::default();
-        assert_eq!(state.app_name, "OxideDock");
+        assert_eq!(state.app_name, "GTLLM");
         assert_eq!(*state.visit_count.lock().unwrap(), 0);
     }
 
