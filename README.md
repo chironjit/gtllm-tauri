@@ -1,8 +1,33 @@
 # GTLLM
-This is a new GTLLM app re-written utilising Tauri instead of the original Dioxus. 
+This is a new GTLLM app re-written utilising Tauri instead of the original Dioxus. The started template utilises the Oxide dock starter template
+
+##Techstack
+
+| Technology    | Version | Module         | Purpose                                     |
+| ------------  | ------- | -------------- | ------------------------------------------- |
+| Tauri         | v2      |                | Desktop runtime                             |
+| Vue           | v3      | vue            | Frontend framework                          |
+| Theme Palette | latest  |                | Daisy UI themes (manual custom import)      |
+| Components    | latest  | @ark-ui/vue    | Ark UI Vue                                  |
+| Icons         | latest  | @lucide/vue    | Lucide Icons Vue                            |
+| Code Highlight| latest  | nue-glow       | Nueglow (`nue-glow`)                        |
+| Vite          | v7      |                | Build tool                                  |
+| TypeScript    | v6      |                | Type safety                                 |
+| Tailwind CSS  | v4      |                | Styling                                     |
+| Vue Router    | v5      | vue-router     | Routing (`./src/router`)                    |
+| Pinia         | v3      | pinia          | State management (`src/stores`)             |
+| VueUse        | latest  | @vueuse/core   | Composable utilities (`/src/composables`)   |
+| Vitest        | latest  |                | Unit testing                                |
+| Playwright    | latest  |                | E2e testing                                 |
+| ESLint        | v10     |                | JS/TS/Vue linting                           |
+| Prettier      | v3      |                | Code formatting                             |
+| Oxlint        | latest  |                | Fast supplemental linting                   |
+| Lefthook      | latest  |                | Git hooks                                   |
 
 
-# GTLLM
+
+
+## Oxide Dock Notes
 
 [![CI](https://github.com/fridzema/oxide-dock/actions/workflows/ci.yml/badge.svg)](https://github.com/fridzema/oxide-dock/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/github/license/fridzema/oxide-dock)](LICENSE)
@@ -13,10 +38,6 @@ This is a new GTLLM app re-written utilising Tauri instead of the original Dioxu
 Raw speed, refined desktop.
 
 OxideDock is a Rust + Vue 3 desktop starter built on Tauri v2 — native performance, polished DX, ship-ready apps.
-
-<p align="center">
-  <img src=".art/screens/screen.png" alt="OxideDock screenshot" width="700" />
-</p>
 
 ## Why OxideDock?
 

@@ -1,0 +1,64 @@
+## The asChild Prop
+
+In Ark UI, the `asChild` prop lets you integrate custom components, ensuring consistent styling and behavior while
+promoting flexibility and reusability. All Ark components that render a DOM element accept the `asChild` prop.
+
+Here's an example using `asChild` to integrate a custom `Button` component within a `Popover`:
+
+<ExampleCode id="as-child" component="popover" />
+
+In this example, the `asChild` prop allows the `Button` to be used as the trigger for the `Popover`, inheriting its
+behaviors from Popover.Trigger.
+
+## The Ark Factory
+
+You can use the `ark` factory to create your own elements that work just like Ark UI components.
+
+<ExampleCode id="factory" component="popover" />
+
+This will produce the following HTML:
+
+```html
+<span id="child" class="parent child" style="background: red; color: blue;">Ark UI</span>
+```
+
+## ID Composition
+
+When composing components that need to work together, share IDs between them using the `ids` prop for proper
+accessibility and interaction.
+
+```tsx
+import { Avatar } from '@ark-ui/react/avatar'
+import { Tooltip } from '@ark-ui/react/tooltip'
+import { useId } from 'react'
+
+export const TooltipWithAvatar = () => {
+  const id = useId()
+
+  return (
+    <Tooltip.Root ids={{ trigger: id }}>
+      <Tooltip.Trigger asChild>
+        <Avatar.Root ids={{ root: id }}>
+          <Avatar.Image src="https://bit.ly/sage-adebayo" />
+          <Avatar.Fallback>SA</Avatar.Fallback>
+        </Avatar.Root>
+      </Tooltip.Trigger>
+      <Tooltip.Positioner>
+        <Tooltip.Content>Segun Adebayo is online</Tooltip.Content>
+      </Tooltip.Positioner>
+    </Tooltip.Root>
+  )
+}
+```
+
+Both components share the same `id` through their `ids` props, creating proper accessibility bindings, `aria-*`
+attributes and interaction behavior.
+
+## Limitations
+
+When using the `asChild` prop, ensure you pass only a single child element. Passing multiple children may cause
+rendering issues.
+
+Certain components, such as `Checkbox.Root` or `RadioGroup.Item`, have specific requirements for their child elements.
+For instance, they may require a label element as a child. If you change the underlying element type, ensure it remains
+accessible and functional.

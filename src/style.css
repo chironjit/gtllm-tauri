@@ -5,7 +5,7 @@
 /*
  * Theme system
  * ------------------------------------------------------------------
- * Each theme is a complete, standalone palette (DaisyUI-style) applied
+ * Each theme is a complete, standalone palette (utilising Daisy UI theme generator) applied
  * via a `[data-theme="…"]` selector on the <html> element. Themes are
  * split into light and dark groups; `useTheme` sets the `data-theme`
  * attribute and mirrors the group onto the `.dark` class so that any
