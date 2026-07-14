@@ -2,6 +2,246 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * Theme system
+ * ------------------------------------------------------------------
+ * Each theme is a complete, standalone palette (DaisyUI-style) applied
+ * via a `[data-theme="…"]` selector on the <html> element. Themes are
+ * split into light and dark groups; `useTheme` sets the `data-theme`
+ * attribute and mirrors the group onto the `.dark` class so that any
+ * `dark:` utilities elsewhere still behave.
+ *
+ * The short custom properties (`--p`, `--b1`, …) hold the raw palette,
+ * and `@theme inline` maps them to Tailwind color utilities such as
+ * `bg-base-100`, `text-base-content`, `bg-primary`, `text-primary-content`,
+ * `bg-accent`, `text-error`, etc.
+ */
+@theme inline {
+  --color-base-100: var(--b1);
+  --color-base-200: var(--b2);
+  --color-base-300: var(--b3);
+  --color-base-content: var(--bc);
+  --color-primary: var(--p);
+  --color-primary-content: var(--pc);
+  --color-secondary: var(--s);
+  --color-secondary-content: var(--sc);
+  --color-accent: var(--a);
+  --color-accent-content: var(--ac);
+  --color-neutral: var(--n);
+  --color-neutral-content: var(--nc);
+  --color-info: var(--in);
+  --color-info-content: var(--inc);
+  --color-success: var(--su);
+  --color-success-content: var(--suc);
+  --color-warning: var(--wa);
+  --color-warning-content: var(--wac);
+  --color-error: var(--er);
+  --color-error-content: var(--erc);
+}
+
+/* ============================ Light themes ============================ */
+
+/* ---- light (default) ---- */
+:root,
+[data-theme="light"] {
+  --b1: oklch(100% 0 0);
+  --b2: oklch(98% 0 0);
+  --b3: oklch(95% 0 0);
+  --bc: oklch(21% 0.006 285.885);
+  --p: oklch(45% 0.24 277.023);
+  --pc: oklch(93% 0.034 272.788);
+  --s: oklch(65% 0.241 354.308);
+  --sc: oklch(94% 0.028 342.258);
+  --a: oklch(77% 0.152 181.912);
+  --ac: oklch(38% 0.063 188.416);
+  --n: oklch(14% 0.005 285.823);
+  --nc: oklch(92% 0.004 286.32);
+  --in: oklch(74% 0.16 232.661);
+  --inc: oklch(29% 0.066 243.157);
+  --su: oklch(76% 0.177 163.223);
+  --suc: oklch(37% 0.077 168.94);
+  --wa: oklch(82% 0.189 84.429);
+  --wac: oklch(41% 0.112 45.904);
+  --er: oklch(71% 0.194 13.428);
+  --erc: oklch(27% 0.105 12.094);
+}
+
+/* ---- pastel ---- */
+[data-theme="pastel"] {
+  --b1: oklch(100% 0 0);
+  --b2: oklch(98.462% 0.001 247.838);
+  --b3: oklch(92.462% 0.001 247.838);
+  --bc: oklch(20% 0 0);
+  --p: oklch(90% 0.063 306.703);
+  --pc: oklch(49% 0.265 301.924);
+  --s: oklch(89% 0.058 10.001);
+  --sc: oklch(51% 0.222 16.935);
+  --a: oklch(90% 0.093 164.15);
+  --ac: oklch(50% 0.118 165.612);
+  --n: oklch(55% 0.046 257.417);
+  --nc: oklch(92% 0.013 255.508);
+  --in: oklch(86% 0.127 207.078);
+  --inc: oklch(52% 0.105 223.128);
+  --su: oklch(87% 0.15 154.449);
+  --suc: oklch(52% 0.154 150.069);
+  --wa: oklch(83% 0.128 66.29);
+  --wac: oklch(55% 0.195 38.402);
+  --er: oklch(80% 0.114 19.571);
+  --erc: oklch(50% 0.213 27.518);
+}
+
+/* ---- winter ---- */
+[data-theme="winter"] {
+  --b1: oklch(100% 0 0);
+  --b2: oklch(97.466% 0.011 259.822);
+  --b3: oklch(93.268% 0.016 262.751);
+  --bc: oklch(41.886% 0.053 255.824);
+  --p: oklch(56.86% 0.255 257.57);
+  --pc: oklch(91.372% 0.051 257.57);
+  --s: oklch(42.551% 0.161 282.339);
+  --sc: oklch(88.51% 0.032 282.339);
+  --a: oklch(59.939% 0.191 335.171);
+  --ac: oklch(11.988% 0.038 335.171);
+  --n: oklch(19.616% 0.063 257.651);
+  --nc: oklch(83.923% 0.012 257.651);
+  --in: oklch(88.127% 0.085 214.515);
+  --inc: oklch(17.625% 0.017 214.515);
+  --su: oklch(80.494% 0.077 197.823);
+  --suc: oklch(16.098% 0.015 197.823);
+  --wa: oklch(89.172% 0.045 71.47);
+  --wac: oklch(17.834% 0.009 71.47);
+  --er: oklch(73.092% 0.11 20.076);
+  --erc: oklch(14.618% 0.022 20.076);
+}
+
+/* ---- nord ---- */
+[data-theme="nord"] {
+  --b1: oklch(95.127% 0.007 260.731);
+  --b2: oklch(93.299% 0.01 261.788);
+  --b3: oklch(89.925% 0.016 262.749);
+  --bc: oklch(32.437% 0.022 264.182);
+  --p: oklch(59.435% 0.077 254.027);
+  --pc: oklch(11.887% 0.015 254.027);
+  --s: oklch(69.651% 0.059 248.687);
+  --sc: oklch(13.93% 0.011 248.687);
+  --a: oklch(77.464% 0.062 217.469);
+  --ac: oklch(15.492% 0.012 217.469);
+  --n: oklch(45.229% 0.035 264.131);
+  --nc: oklch(89.925% 0.016 262.749);
+  --in: oklch(69.207% 0.062 332.664);
+  --inc: oklch(13.841% 0.012 332.664);
+  --su: oklch(76.827% 0.074 131.063);
+  --suc: oklch(15.365% 0.014 131.063);
+  --wa: oklch(85.486% 0.089 84.093);
+  --wac: oklch(17.097% 0.017 84.093);
+  --er: oklch(60.61% 0.12 15.341);
+  --erc: oklch(12.122% 0.024 15.341);
+}
+
+/* ============================ Dark themes ============================= */
+
+/* ---- dark ---- */
+[data-theme="dark"] {
+  --b1: oklch(25.33% 0.016 252.42);
+  --b2: oklch(23.26% 0.014 253.1);
+  --b3: oklch(21.15% 0.012 254.09);
+  --bc: oklch(97.807% 0.029 256.847);
+  --p: oklch(58% 0.233 277.117);
+  --pc: oklch(96% 0.018 272.314);
+  --s: oklch(65% 0.241 354.308);
+  --sc: oklch(94% 0.028 342.258);
+  --a: oklch(77% 0.152 181.912);
+  --ac: oklch(38% 0.063 188.416);
+  --n: oklch(14% 0.005 285.823);
+  --nc: oklch(92% 0.004 286.32);
+  --in: oklch(74% 0.16 232.661);
+  --inc: oklch(29% 0.066 243.157);
+  --su: oklch(76% 0.177 163.223);
+  --suc: oklch(37% 0.077 168.94);
+  --wa: oklch(82% 0.189 84.429);
+  --wac: oklch(41% 0.112 45.904);
+  --er: oklch(71% 0.194 13.428);
+  --erc: oklch(27% 0.105 12.094);
+}
+
+/* ---- dim ---- */
+[data-theme="dim"] {
+  --b1: oklch(30.857% 0.023 264.149);
+  --b2: oklch(28.036% 0.019 264.182);
+  --b3: oklch(26.346% 0.018 262.177);
+  --bc: oklch(82.901% 0.031 222.959);
+  --p: oklch(86.133% 0.141 139.549);
+  --pc: oklch(17.226% 0.028 139.549);
+  --s: oklch(73.375% 0.165 35.353);
+  --sc: oklch(14.675% 0.033 35.353);
+  --a: oklch(74.229% 0.133 311.379);
+  --ac: oklch(14.845% 0.026 311.379);
+  --n: oklch(24.731% 0.02 264.094);
+  --nc: oklch(82.901% 0.031 222.959);
+  --in: oklch(86.078% 0.142 206.182);
+  --inc: oklch(17.215% 0.028 206.182);
+  --su: oklch(86.171% 0.142 166.534);
+  --suc: oklch(17.234% 0.028 166.534);
+  --wa: oklch(86.163% 0.142 94.818);
+  --wac: oklch(17.232% 0.028 94.818);
+  --er: oklch(82.418% 0.099 33.756);
+  --erc: oklch(16.483% 0.019 33.756);
+}
+
+/* ---- dracula ---- */
+[data-theme="dracula"] {
+  --b1: oklch(28.822% 0.022 277.508);
+  --b2: oklch(26.805% 0.02 277.508);
+  --b3: oklch(24.787% 0.019 277.508);
+  --bc: oklch(97.747% 0.007 106.545);
+  --p: oklch(75.461% 0.183 346.812);
+  --pc: oklch(15.092% 0.036 346.812);
+  --s: oklch(74.202% 0.148 301.883);
+  --sc: oklch(14.84% 0.029 301.883);
+  --a: oklch(83.392% 0.124 66.558);
+  --ac: oklch(16.678% 0.024 66.558);
+  --n: oklch(39.445% 0.032 275.524);
+  --nc: oklch(87.889% 0.006 275.524);
+  --in: oklch(88.263% 0.093 212.846);
+  --inc: oklch(17.652% 0.018 212.846);
+  --su: oklch(87.099% 0.219 148.024);
+  --suc: oklch(17.419% 0.043 148.024);
+  --wa: oklch(95.533% 0.134 112.757);
+  --wac: oklch(19.106% 0.026 112.757);
+  --er: oklch(68.22% 0.206 24.43);
+  --erc: oklch(13.644% 0.041 24.43);
+}
+
+/* ---- midnight ---- */
+[data-theme="midnight"] {
+  --b1: oklch(20.768% 0.039 265.754);
+  --b2: oklch(19.314% 0.037 265.754);
+  --b3: oklch(17.86% 0.034 265.754);
+  --bc: oklch(84.153% 0.007 265.754);
+  --p: oklch(75.351% 0.138 232.661);
+  --pc: oklch(15.07% 0.027 232.661);
+  --s: oklch(68.011% 0.158 276.934);
+  --sc: oklch(13.602% 0.031 276.934);
+  --a: oklch(72.36% 0.176 350.048);
+  --ac: oklch(14.472% 0.035 350.048);
+  --n: oklch(27.949% 0.036 260.03);
+  --nc: oklch(85.589% 0.007 260.03);
+  --in: oklch(68.455% 0.148 237.251);
+  --inc: oklch(0% 0 0);
+  --su: oklch(78.452% 0.132 181.911);
+  --suc: oklch(15.69% 0.026 181.911);
+  --wa: oklch(83.242% 0.139 82.95);
+  --wac: oklch(16.648% 0.027 82.95);
+  --er: oklch(71.785% 0.17 13.118);
+  --erc: oklch(14.357% 0.034 13.118);
+}
+
+html,
+body,
+#app {
+  min-height: 100vh;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.15s ease;
